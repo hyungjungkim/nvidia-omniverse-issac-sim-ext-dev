@@ -5,31 +5,36 @@ This repository contains example codes I tested for developing extensions for th
 |Items|Computer 1|Computer 2|
 |---|---|---|
 |Manufacturer|Lenovo|Lenovo|
-|Model|Legion T7 (desktop)|Legion P5 (laptop)|
-|Operating system|Windows|Linux|
-|Package ver.|2022.1.1 & 2022.2.0|?|
+|Model|Legion-T7 (desktop)|Legion P5 (laptop)|
+|CPU|11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz|?|
+|GPU|Nvidia RTX 3080|?|
+|Operating system|Windows 11 Pro|Linux ?|
+|Package ver.|2022.1.1</br>2022.2.0|?|
 |Etc.|||
 
-## Examples
-1. Hello Extension
-This example is configured to learn and test the basics of building my own extension as a plugin for the Isaac Sim application.
+## Example extensions
+1. **Hello Extension**  
+This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application.
 
-2. Hello Scene
-In this example, I explorered how to add 3d models on the stage for the Isaac Sim.
+2. **Hello Scene IExt**  
+This example implements how to set a default stage using the omni.ext.IExt interface for the Isaac Sim.
 
-3. Hello Robot
+3. **Hello Scene BaseSample**  
+This example implements how to set a default stage using the BaseSample class for the Isaac Sim.
+
+4. Hello Robot  
 In this example, I tested how to add articulated robots, including industrial and collaborative robots.
 
-4. Hello Task  
+5. Hello Task  
 (to be added.)
 
-5. Hello Sensor - Vision  
+6. Hello Sensor - Vision  
 (to be added.)
 
-6. Hello Sensor - Lidar?  
+7. Hello Sensor - Lidar?  
 (to be added.)
 
-7. (to be determined.)
+8. (to be determined.)
 
 
 ## References

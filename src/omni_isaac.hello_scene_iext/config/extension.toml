@@ -3,8 +3,8 @@
 version = "1.0.0"
 
 # The title and description fields are primarily for displaying extension info in UI
-title = "My first Isaac extension"
-description="This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application."
+title = "My First Scene Extension - iExt"
+description="This example implements how to set a default stage using the omni.ext.IExt interface for the Isaac Sim."
 
 # Path (relative to the root) or content of readme markdown file for UI.
 readme  = "docs/README.md"
@@ -16,13 +16,13 @@ repository = ""
 category = "Research"
 
 # Keywords for the extension
-keywords = ["omni", "issac", 'hello']
+keywords = ["omni", "issac", 'scene']
 
 
 # Use omni.ui to build simple UI
 [dependencies]
 "omni.kit.uiapp" = {}
 
-# Main python module this extension provides, it will be publicly available as "import omni.isaac.hello_ext".
+# Main python module this extension provides, it will be publicly available as "import omni.isaac.hello_scene_iext".
 [[python.module]]
-name = "omni.isaac.hello_ext"
+name = "omni.isaac.hello_scene_iext"

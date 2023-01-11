@@ -7,18 +7,25 @@ from omni.kit.menu.utils import add_menu_items, remove_menu_items, MenuItemDescr
 import weakref # for menu callback event
 import gc
 
-EXTENSION_NAME = 'Hello Extension'
+# for Isaac Sim
+from .hello_world import HelloWorld
+# from omni.isaac.core import World
+import asyncio
+
+EXTENSION_NAME = 'Hello Scene - IExt'
 MENU_NAME = 'Issac Ext Dev'
 
-SUMMARY = 'This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application.'
+SUMMARY = 'This example implements setting a default stage using the omni.ext.IExt interface for the Isaac Sim.'
 
-class HelloExt(omni.ext.IExt):
+class FactorySimExt(omni.ext.IExt):
     def on_startup(self, ext_id):
         print(EXTENSION_NAME + ' startup')
         self._ext_id = ext_id
         self._menu_items = None
         self._windows = None
         self._ui_components = {}
+
+        self._my_world = HelloWorld()
 
         self.add_menu()
 
@@ -59,10 +66,10 @@ class HelloExt(omni.ext.IExt):
     def build_test_gui_grid(self):
         ui_components = {
             'button-1': {
-                'label': 'Button 1',
+                'label': 'Load a scene',
                 'type': 'button',
-                'text': 'Test 1',
-                'tooltip': 'Click for testing.',
+                'text': 'Load',
+                'tooltip': 'Click for setting up a default scene for the Isaac Sim.',
                 'on_clicked_fn': self._on_button_1_clicked,
             },
             'button-2': {
@@ -97,12 +104,35 @@ class HelloExt(omni.ext.IExt):
                     # Button
                     if value["type"] == "button":
                         self._ui_components["btn_" + value["label"]] = btn_builder(**value)
+                    # Multiple Buttons
+                    # elif value["type"] == "multi_button":
+                    #     elems = multi_btn_builder(**value)
+                    #     for i in range(len(elems)):
+                    #         self._models["btn_" + value["label"]] = elems[i]
+
+                # multi_btn_builder()
     
     def _on_button_1_clicked(self):
-        print('Button 1 clicked')
+        self._on_load_world()
     
     def _on_button_2_clicked(self):
         print('Button 2 clicked')
 
     def _on_button_3_clicked(self):
-        print('Button 3 clicked')	
+        print('Button 3 clicked')
+    
+    def _on_load_world(self):
+        print('load a scene')
+        async def _on_load_world_async():
+            await self._my_world.load_world_async()
+            await omni.kit.app.get_app().next_update_async() # Wait for next update of Omniverse Kit. Return delta time in seconds
+            # self._factory._world.add_stage_callback("stage_event", self.on_stage_event) # [issac] Adds a callback which will be called after each stage event such as open/close.
+            # self._factory._world.add_timeline_callback("stop_reset_event", self.on_timeline_event) # [issac] Adds a callback which will be called after each timeline event such as play/pause.
+
+        asyncio.ensure_future(_on_load_world_async())
+
+    def on_stage_event(self, event):
+        print('stage event: ' + str(event.type)) # omni.usd.StageEventType
+    
+    def on_timeline_event(self, event):
+        print('timeline event: ' + str(event.type)) # omni.timeline.TimelineEventType
