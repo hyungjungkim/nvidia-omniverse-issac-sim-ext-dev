@@ -10,7 +10,7 @@ This repository contains example codes I tested for developing extensions for th
 |GPU|Nvidia RTX 3080|Nvidia RTX 2080Ti|
 |Operating system|Windows 11 Pro|Ubuntu 18.04 LTS|
 |Package ver.|2022.1.1</br>2022.2.0|2022.1.1</br>2022.2.0|
-|Etc.||Nvidia driver:525.60.11</br>CUDA : 12.0|
+|Etc.||Nvidia driver: 525.60.11</br>CUDA: 12.0|
 
 ## Example extensions
 1. **Hello Extension**  
