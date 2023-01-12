@@ -4,13 +4,13 @@ This repository contains example codes I tested for developing extensions for th
 ## Test environment
 |Items|Computer 1|Computer 2|
 |---|---|---|
-|Manufacturer|Lenovo|Lenovo|
-|Model|Legion-T7 (desktop)|Legion P5 (laptop)|
-|CPU|11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz|?|
-|GPU|Nvidia RTX 3080|?|
-|Operating system|Windows 11 Pro|Linux ?|
-|Package ver.|2022.1.1</br>2022.2.0|?|
-|Etc.|||
+|Manufacturer|Lenovo|Prefab PC|
+|Model|Legion-T7 (desktop)|Prefab PC (Desktop)|
+|CPU|11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz|9th Gen Intel(R) Core(TM) i9-9900KF @ 3.60GHz|
+|GPU|Nvidia RTX 3080|Nvidia RTX 2080Ti|
+|Operating system|Windows 11 Pro|Ubuntu 18.04 LTS|
+|Package ver.|2022.1.1</br>2022.2.0|2022.1.1</br>2022.2.0|
+|Etc.||Nvidia driver:525.60.11</br>CUDA : 12.0|
 
 ## Example extensions
 1. **Hello Extension**  
