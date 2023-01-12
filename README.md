@@ -14,10 +14,12 @@ This repository contains example codes I tested for developing extensions for th
 
 ## Example extensions
 1. **Hello Extension**  
-This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application.
+This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application.  
+![](/doc/hello-extension.png)  
 
-2. **Hello Scene IExt**  
-This example implements how to set a default stage using the omni.ext.IExt interface for the Isaac Sim.
+2. **Hello Scene - IExt**  
+This example implements setting a default stage using the omni.ext.IExt interface for the Isaac Sim. I made this example by referring to the BaseSample class to understand a basic pipeline to build a scene from an extension.  
+![](/doc/hello-scene-iext.png)
 
 3. **Hello Scene BaseSample**  
 This example implements how to set a default stage using the BaseSample class for the Isaac Sim.

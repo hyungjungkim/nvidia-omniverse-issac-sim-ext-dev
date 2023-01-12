@@ -3,7 +3,7 @@
 version = "1.0.0"
 
 # The title and description fields are primarily for displaying extension info in UI
-title = "My First Scene Extension - iExt"
+title = "Hello Scene - IExt"
 description="This example implements how to set a default stage using the omni.ext.IExt interface for the Isaac Sim."
 
 # Path (relative to the root) or content of readme markdown file for UI.
