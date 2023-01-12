@@ -43,4 +43,4 @@ In this example, I tested how to add articulated robots, including industrial an
 * NVIDIA OMNIVERSE™ DOCUMENTATION: https://docs.omniverse.nvidia.com/
 
 ## Thanks to
-* Sooyoung Park of IDIM @ Seoul National University
+* Suyoung Park of IDIM @ Seoul National University
