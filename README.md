@@ -1,6 +1,8 @@
 # Developing an Isaac Sim extension
 This repository contains examples I tested for developing an extension for the Isaac Sim application on the NVIDIA Omniverse platform.
 
+---
+
 ## Test environment
 |Items|Computer 1|Computer 2|
 |---|---|---|
@@ -13,7 +15,18 @@ This repository contains examples I tested for developing an extension for the I
 |Driver ver.|527.56|525.60.11|
 |CUDA ver.|12.0|12.0|
 
-Please visit NVIDIA to check the driver requirements: https://developer.nvidia.com/omniverse/driver
+Please visit NVIDIA to check the driver requirements: https://developer.nvidia.com/omniverse/driver  
+
+---
+
+## How to use
+1. Download examples from the source code folder [[src](/src/)].
+2. Place the downloaded examples in a directory in the **Extension Search Paths** of the **Extensions manager** panel or create a new search path to the example directory in this panel.
+    - Extensions Manager overview: https://docs.omniverse.nvidia.com/app_isaacsim/prod_extensions/ext_extension-manager.html 
+    ![](/doc/extension-search-paths.png)
+3. Isaac Sim's workflow is that the application runs asynchronously. It allows for **'hot reloading'**, so you can change the extension code while Omniverse Isaac Sim is running and then see the reflected changes in your application after saving the file without shutting down or restarting Omniverse Isaac Sim.
+
+---
 
 ## Example extensions
 1. **Hello Extension**  
@@ -42,9 +55,6 @@ In this example, I tested how to add articulated robots, including industrial an
 
 8. (to be determined.)
 
-
+---
 ## References
 * NVIDIA OMNIVERSE™ documentation: https://docs.omniverse.nvidia.com/
-
-## Special thanks to
-* Suyoung Park of IDIM @ Seoul National University
