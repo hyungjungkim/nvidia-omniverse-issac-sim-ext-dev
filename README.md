@@ -1,5 +1,5 @@
 # Developing an Isaac Sim extension
-This repository contains example codes I tested for developing extensions for the Isaac Sim application on the NVIDIA Omniverse platform.
+This repository contains examples I tested for developing an extension for the Isaac Sim application on the NVIDIA Omniverse platform.
 
 ## Test environment
 |Items|Computer 1|Computer 2|
@@ -13,6 +13,8 @@ This repository contains example codes I tested for developing extensions for th
 |Driver ver.|527.56|525.60.11|
 |CUDA ver.|12.0|12.0|
 
+Please visit NVIDIA to check the driver requirements: https://developer.nvidia.com/omniverse/driver
+
 ## Example extensions
 1. **Hello Extension**  
 This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application.  
@@ -22,8 +24,9 @@ This example is configured to test the basics of building a custom extension as 
 This example implements setting a default stage using the omni.ext.IExt interface for the Isaac Sim. I made this example by referring to the BaseSample class to understand a basic pipeline to build a scene from an extension.  
 ![](/doc/hello-scene-iext.png)
 
-3. **Hello Scene BaseSample**  
-This example implements how to set a default stage using the BaseSample class for the Isaac Sim.
+3. **Hello Scene - BaseSample**  
+This example implements setting a default stage using the BaseSample class for the Isaac Sim. In this example, I modified the menu name (in 'base_sample_extension.py') from 'Isaac Examples' to 'Isaac Ext Dev' to distinguish this example from the existing examples.
+![](/doc/hello-scene-basesample.png)
 
 4. Hello Robot  
 In this example, I tested how to add articulated robots, including industrial and collaborative robots.
@@ -41,7 +44,7 @@ In this example, I tested how to add articulated robots, including industrial an
 
 
 ## References
-* NVIDIA OMNIVERSE™ DOCUMENTATION: https://docs.omniverse.nvidia.com/
+* NVIDIA OMNIVERSE™ documentation: https://docs.omniverse.nvidia.com/
 
-## Thanks to
+## Special thanks to
 * Suyoung Park of IDIM @ Seoul National University

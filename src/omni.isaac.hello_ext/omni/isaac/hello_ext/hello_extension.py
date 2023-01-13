@@ -7,9 +7,8 @@ from omni.kit.menu.utils import add_menu_items, remove_menu_items, MenuItemDescr
 import weakref # for menu callback event
 import gc
 
+MENU_NAME = 'Isaac Ext Dev'
 EXTENSION_NAME = 'Hello Extension'
-MENU_NAME = 'Issac Ext Dev'
-
 SUMMARY = 'This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application.'
 
 class HelloExt(omni.ext.IExt):

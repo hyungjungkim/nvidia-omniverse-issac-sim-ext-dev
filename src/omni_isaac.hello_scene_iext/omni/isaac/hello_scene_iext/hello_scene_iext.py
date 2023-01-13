@@ -12,12 +12,11 @@ from .hello_world import HelloWorld
 # from omni.isaac.core import World
 import asyncio
 
+MENU_NAME = 'Isaac Ext Dev'
 EXTENSION_NAME = 'Hello Scene - IExt'
-MENU_NAME = 'Issac Ext Dev'
-
 SUMMARY = 'This example implements setting a default stage using the omni.ext.IExt interface for the Isaac Sim.'
 
-class FactorySimExt(omni.ext.IExt):
+class HelloScene(omni.ext.IExt):
     def on_startup(self, ext_id):
         print(EXTENSION_NAME + ' startup')
         self._ext_id = ext_id
