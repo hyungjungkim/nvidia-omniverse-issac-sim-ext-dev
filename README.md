@@ -60,7 +60,7 @@ https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_intro_workf
 * In this example, I modified the menu name (in 'base_sample_extension.py') from 'Isaac Examples' to 'Isaac Ext Dev' to distinguish this example from the existing examples.  
 ![](/doc/hello-scene-basesample.png)
 
-4. **Hello Object**  [[code]()]
+4. **Hello Object**  [[code](/src/omni_isaac.hello_object_primitive/)]
 * This example contains how to add primitive Omniverse geometric objects (Create->Shapes in GUI menu) in the Scene of the World.
     * Through this example, I found a difference among the three primitive object classes of Capsule/Cone/Cuboid/Cylinder/Sphere. First, a DynamicObject class (e.g., DynamicCuboid, red one) is enabled for the Physics of both Collider and Rigid Body. Second, only a FixedObject class (e.g., FixedCylinder, green one) is allowed for the Physics of Collider. Last, a VisualObject class (e.g., VisualSphere, blue one) is not enabled any Physics properties compared to other object classes. This difference allows the movement and collision of the objects to appear differently.
     * A physics callback allows applying actions before each physics step. So, by adding a physics callback function, we can inspect information about objects in the World.
