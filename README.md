@@ -25,6 +25,15 @@ Please visit NVIDIA to check the driver requirements: https://developer.nvidia.c
 ---
 
 ## How to use
+### Prerequisites
+* Intermediate knowledge of Python and asynchronous programming is required.
+* Basic knowledge of robotics and the manufacturing process is also required but not mandatory.
+* Please download and install Visual Studio Code before beginning the examples. https://code.visualstudio.com/download
+* Please review Isaac Sim Interface and Isaac Sim Workflows before beginning the examples.  https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_intro_interface.html#isaac-sim-app-tutorial-intro-interface
+https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_intro_workflows.html#isaac-sim-app-tutorial-intro-workflows
+* In addition, please try a Hello World tutorial. I also started from this tutorial to learn Omniverse Isaac Sim.  https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_core_hello_world.html#isaac-sim-app-tutorial-core-hello-world
+
+### Run the examples
 1. Download examples from the source code folder [[src](/src/)].
 2. Place the downloaded examples in a directory in the **Extension Search Paths** of the **Extensions manager** panel or create a new search path to the example directory in this panel.
     - Extensions Manager overview: https://docs.omniverse.nvidia.com/app_isaacsim/prod_extensions/ext_extension-manager.html 
@@ -34,31 +43,42 @@ Please visit NVIDIA to check the driver requirements: https://developer.nvidia.c
 ---
 
 ## Example extensions
-1. **Hello Extension**  
-This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application. [[src](/src/omni.isaac.hello_ext/)]  
+1. **Hello Extension** [[code](/src/omni.isaac.hello_ext/)]   
+* This example is configured to test the basics of building a custom extension as a plugin for the Isaac Sim application.  
 ![](/doc/hello-extension.png)  
 
-2. **Hello Scene - IExt**  
-This example implements setting a default stage using the omni.ext.IExt interface for the Isaac Sim. I made this example by referring to the BaseSample class to understand a basic pipeline to build a scene from an extension. [[src](/src/omni_isaac.hello_scene_iext/)]  
-![](/doc/hello-scene-iext.png)
+2. **Hello Scene - IExt** [[code](/src/omni_isaac.hello_scene_iext/)]  
+* This example implements setting a default stage using the omni.ext.IExt interface for the Isaac Sim. I made this example by referring to the BaseSample class to understand a basic pipeline to build a scene from an extension.  
+    * **World** is the core class that support us to interact with the simulator in an easy and modular way. It handles many time-related events such as adding callbacks, stepping physics, resetting the scene, adding tasks, etc. The world contains an instance of a **Scene**. The Scene class manages simulation assets of interest in the USD Stage. It provides an easy API to add, manipulate, inspect, and reset different USD assets in the stage.
 
-3. **Hello Scene - BaseSample**  
-This example implements setting a default stage using the BaseSample class for the Isaac Sim. In this example, I modified the menu name (in 'base_sample_extension.py') from 'Isaac Examples' to 'Isaac Ext Dev' to distinguish this example from the existing examples. [[src](/src/omni_isaac.hello_scene_basesample/)]  
+    ![](/doc/hello-scene-iext.png)
+
+3. **Hello Scene - BaseSample** [[code](/src/omni_isaac.hello_scene_basesample/)]  
+* This example implements setting a default stage using the BaseSample class for the Isaac Sim.  
+    * The BaseSample and BaseSampleExtension classes contain a set of frequently used APIs that are designed to be used in robotics applications that can be inherited in Python and Omniverse Kit to start with the basic functionality needed for any Isaac Sim application, including loading, resetting, and clearing a world, as covered in most example Extensions.  
+
+* In this example, I modified the menu name (in 'base_sample_extension.py') from 'Isaac Examples' to 'Isaac Ext Dev' to distinguish this example from the existing examples.  
 ![](/doc/hello-scene-basesample.png)
 
-4. Hello Robot  
-In this example, I tested how to add articulated robots, including industrial and collaborative robots.
+4. **Hello Object**  [[code]()]
+* This example contains how to add primitive Omniverse geometric objects (Create->Shapes in GUI menu) in the Scene of the World.
+    * Through this example, I found a difference among the three primitive object classes of Capsule/Cone/Cuboid/Cylinder/Sphere. First, a DynamicObject class (e.g., DynamicCuboid, red one) is enabled for the Physics of both Collider and Rigid Body. Second, only a FixedObject class (e.g., FixedCylinder, green one) is allowed for the Physics of Collider. Last, a VisualObject class (e.g., VisualSphere, blue one) is not enabled any Physics properties compared to other object classes. This difference allows the movement and collision of the objects to appear differently.
+    * A physics callback allows applying actions before each physics step. So, by adding a physics callback function, we can inspect information about objects in the World.
 
-5. Hello Task  
+    ![](/doc/comparison-object-classes.gif)
+
+5. Hello Robot  
+
+6. Hello Task  
 (to be added.)
 
-6. Hello Sensor - Vision  
+7. Hello Sensor - Vision  
 (to be added.)
 
-7. Hello Sensor - Lidar?  
+8. Hello Sensor - Lidar?  
 (to be added.)
 
-8. (to be determined.)
+9. (to be determined.)
 
 ---
 ## References
