@@ -1,5 +1,7 @@
 # Developing an Isaac Sim extension
-This repository contains examples I tested for developing an extension for the Isaac Sim application on the NVIDIA Omniverse platform.
+Extensions are the core building block of Omniverse Kit-based applications. They are individually built application modules. All the tools used in Omniverse Isaac Sim are built as extensions.  
+While studying Omniverse Isaac Sim, I found [three main workflows](https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_intro_workflows.html#isaac-sim-workflows) when developing in Omniverse Isaac Sim: GUI, extensions, and standalone Python. Among these workflows, I think the Extensions are the most comprehensive way to experiment with changing various conditions and tasks. On the other hand, standalone Python would be useful when integrating with third-party algorithms such as deep reinforcement learning. Thus, most examples in this repository focus on developing extensions using prepared or imported USD models, not creating objects using the GUI.  
+This repository contains examples I tested for developing an extension for the Isaac Sim application on the NVIDIA Omniverse platform. 
 Although the details of python APIs and examples are well explained in the online documentation, it is difficult to read and test them one by one due to their vast contents, so here I will summarize the essentials for developing robotics and manufacturing process simulation applications using Isaac Sim and its Extension.
 
 ## What is Isaac Sim?
@@ -60,25 +62,28 @@ https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_intro_workf
 * In this example, I modified the menu name (in 'base_sample_extension.py') from 'Isaac Examples' to 'Isaac Ext Dev' to distinguish this example from the existing examples.  
 ![](/doc/hello-scene-basesample.png)
 
-4. **Hello Object**  [[code](/src/omni_isaac.hello_object_primitive/)]
+4. **Hello Object - primitive**  [[code](/src/omni_isaac.hello_object_primitive/)]
 * This example contains how to add primitive Omniverse geometric objects (Create->Shapes in GUI menu) in the Scene of the World.
     * Through this example, I found a difference among the three primitive object classes of Capsule/Cone/Cuboid/Cylinder/Sphere. First, a DynamicObject class (e.g., DynamicCuboid, red one) is enabled for the Physics of both Collider and Rigid Body. Second, only a FixedObject class (e.g., FixedCylinder, green one) is allowed for the Physics of Collider. Last, a VisualObject class (e.g., VisualSphere, blue one) is not enabled any Physics properties compared to other object classes. This difference allows the movement and collision of the objects to appear differently.
     * A physics callback allows applying actions before each physics step. So, by adding a physics callback function, we can inspect information about objects in the World.
 
     ![](/doc/comparison-object-classes.gif)
 
-5. Hello Robot  
+5. **Hello Object - imported** [[code]()]
+* This example cover how to add objects using importing functions in the Scene of the World.
 
-6. Hello Task  
+6. Hello Robot  
+
+7. Hello Task  
 (to be added.)
 
-7. Hello Sensor - Vision  
+8. Hello Sensor - Vision  
 (to be added.)
 
-8. Hello Sensor - Lidar?  
+9. Hello Sensor - Lidar?  
 (to be added.)
 
-9. (to be determined.)
+10. (to be determined.)
 
 ---
 ## References
