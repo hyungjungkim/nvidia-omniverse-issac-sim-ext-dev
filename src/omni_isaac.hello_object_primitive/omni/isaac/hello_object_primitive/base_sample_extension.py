@@ -209,7 +209,7 @@ class BaseSampleExtension(omni.ext.IExt):
         return
 
     def _sample_window_cleanup(self):
-        remove_menu_items(self._menu_items, "Isaac Examples")
+        remove_menu_items(self._menu_items, "Isaac Ext Dev")
         self._window = None
         self._menu_items = None
         self._buttons = None

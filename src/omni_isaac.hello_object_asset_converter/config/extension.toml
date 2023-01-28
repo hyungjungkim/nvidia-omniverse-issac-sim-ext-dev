@@ -1,0 +1,28 @@
+[package]
+# Semantic Versionning is used: https://semver.org/
+version = "1.0.0"
+
+# The title and description fields are primarily for displaying extension info in UI
+title = "Hello Object - Asset Converter"
+description="This example covers converting a non-USD format of engineering 3D models such as FBX and OBJ to the USD and adding the USD asset in the Scene of the World."
+
+# Path (relative to the root) or content of readme markdown file for UI.
+readme  = "docs/README.md"
+
+# URL of the extension source repository.
+repository = ""
+
+# One of categories for UI.
+category = "Research"
+
+# Keywords for the extension
+keywords = ["omni", "issac", 'asset', 'converter']
+
+
+# Use omni.ui to build simple UI
+[dependencies]
+"omni.kit.uiapp" = {}
+
+# Main python module this extension provides, it will be publicly available as "import omni.hello_object_asset_converter".
+[[python.module]]
+name = "omni.isaac.hello_object_asset_converter"

@@ -59,7 +59,7 @@ https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_intro_workf
 * This example implements setting a default stage using the BaseSample class for the Isaac Sim.  
     * The BaseSample and BaseSampleExtension classes contain a set of frequently used APIs that are designed to be used in robotics applications that can be inherited in Python and Omniverse Kit to start with the basic functionality needed for any Isaac Sim application, including loading, resetting, and clearing a world, as covered in most example Extensions.  
 
-* In this example, I modified the menu name (in 'base_sample_extension.py') from 'Isaac Examples' to 'Isaac Ext Dev' to distinguish this example from the existing examples.  
+* In this example, I modified the menu name (in 'base_sample_extension.py') from 'Isaac Examples' to 'Isaac Ext Dev' to distinguish my example from the existing examples.  
 ![](/doc/hello-scene-basesample.png)
 
 4. **Hello Object - primitive**  [[code](/src/omni_isaac.hello_object_primitive/)]
@@ -69,10 +69,17 @@ https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_intro_workf
 
     ![](/doc/comparison-object-classes.gif)
 
-5. **Hello Object - imported** [[code]()]
-* This example cover how to add objects using importing functions in the Scene of the World.
+5. **Hello Object - Asset Converter** [[code](/src/omni_isaac.hello_object_asset_converter/)]
+* This example covers converting a non-USD format of engineering 3D models such as FBX and OBJ to the USD and adding the USD asset in the Scene of the World.
+    * To convert the FBX and OBJ models, I utilized the Asset Converter, which is a native tool on Omniverse, asynchronously.
+    * In this example, I implemented a custom UI frame, including buttons, a string field, and the file importer dialog.  
+    ![](/doc/custom_ui_frame_ex.png)
+    * There is also a native CAD importer for STEP and IGES files. Please visit the link to find more:  
+    https://docs.omniverse.nvidia.com/app_isaacsim/prod_extensions/ext_cad-importer.html
 
-6. Hello Robot  
+    ![](/doc/hello-object-asset_converter.gif)
+
+6. **Hello Robot** [[code](/src)]
 
 7. Hello Task  
 (to be added.)
